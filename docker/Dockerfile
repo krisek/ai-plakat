@@ -4,6 +4,9 @@ FROM python:slim-trixie
 # Set the working directory in the container to /app
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/*
+    
 COPY app/requirements.txt /app
 
 # Install any needed packages specified in requirements.txt
