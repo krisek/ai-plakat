@@ -89,6 +89,18 @@
       maxHeight: "180px",
       placeholder: "Írj részletes tartalmat Markdown‑formátumban..."
     });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector('form');
+        const btn = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', function () {
+            btn.disabled = true;
+            btn.innerText = "Mentés folyamatban...";
+        });
+    });
+
   </script>
 </body>
 </html>

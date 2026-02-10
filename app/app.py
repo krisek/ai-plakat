@@ -300,7 +300,18 @@ async def finalize(
     content: str = Form(...)
 ):
     temp_path = Path(temp_path)
+  
+  
     if not temp_path.exists():
+        expected_final = STATIC_DIR / f"{date_str}_{safe_title}{ext}"
+        if expected_final.exists():
+            return JSONResponse({
+                "detail": "Bejegyzés már korábban létrejött",
+                "markdown_path": str(md_path),
+                "image_path": str(expected_final),
+            })
+        
+
         raise HTTPException(status_code=400, detail="Temp file missing")
 
     try:
