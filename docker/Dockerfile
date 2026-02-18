@@ -5,7 +5,7 @@ FROM python:slim-trixie
 # Create a non‑root user (UID 1000) and set permissions
 # ----------------------------------------------------------------------
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends git imagemagick && \
+    apt-get install -y --no-install-recommends git imagemagick ghostscript && \
     rm -rf /var/lib/apt/lists/* && \
     # add a user named “appuser” with UID 1000, no password, and a home dir
     useradd -m -u 1000 -s /bin/bash appuser
