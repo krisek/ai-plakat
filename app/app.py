@@ -121,7 +121,7 @@ def call_openwebui_ai(image_path: Path) -> dict:
     # Prompt
     prompt = """
         Analyze the attached image and create a Hugo blog post describing its content or context. 
-        Return **only** a JSON object with the keys: `date` (ISO-8601 format, e.g., 2025-09-29T00:00:00Z), 
+        Return **only** a JSON object with the keys: `date` (ISO-8601 format, e.g., 2026-09-29T00:00:00Z), 
         `title`, `summary`, `content` in Hungarian language using the same words / vocabulary as on the image. 
         Do not include any extra text, or backticks. Summary and content fields should be Markdown formatted.
         The summary can be even 400 hundred characters, there is "enough" place to display it. 
